@@ -55,19 +55,17 @@ developing applications that use %{name}.
 %doc README.md
 %license LICENSES/*.txt
 %{_kf6_datadir}/qlogging-categories6/kauth.*
-%{_kf6_libdir}/libKF6Auth.so.*
 %{_kf6_libdir}/libKF6AuthCore.so.*
 %{_kf6_datadir}/dbus-1/system.d/org.kde.kf6auth.conf
-%{_kf6_qtplugindir}/kauth/
+%{_kf6_plugindir}/kauth/
 %{_kf6_datadir}/kf6/kauth/
 #%%{_kf6_libexecdir}/kauth/
 
 %files devel
-%{_kf6_includedir}/KF6/KAuth/
-%{_kf6_includedir}/KF6/KAuthCore/
-%{_kf6_includedir}/KF6/KAuthWidgets/
-%{_kf6_libdir}/libKF6Auth.so
+%{_kf6_includedir}/KAuth/
+%{_kf6_includedir}/KAuthCore/
+#%%{_kf6_includedir}/KAuthWidgets/
 %{_kf6_libdir}/libKF6AuthCore.so
 %{_kf6_libdir}/cmake/KF6Auth/
-%{_kf6_archdatadir}/mkspecs/modules/qt_KAuth*.pri
+#%%{_kf6_archdatadir}/mkspecs/modules/qt_KAuth*.pri
 
