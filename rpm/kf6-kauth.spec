@@ -1,4 +1,5 @@
 %global kf6_version 6.18.0
+%global qt6_version 6.7.0
 
 Name: kf6-kauth
 Version: 6.18.0
@@ -10,14 +11,15 @@ URL:     https://invent.kde.org/frameworks/kauth
 
 Source0: %{name}-%{version}.tar.bz2
 
-BuildRequires: opt-extra-cmake-modules >= %{kf6_version}
+BuildRequires: kf6-extra-cmake-modules >= %{kf6_version}
 BuildRequires: kf6-kcoreaddons-devel >= %{kf6_version}
 BuildRequires: kf6-rpm-macros
 
 BuildRequires: qt6-qtbase-devel
 BuildRequires: qt6-qttools-devel
 
-%{?_qt6:Requires: %{_qt6}%{?_isa} = %{qt6_version}}
+BuildRequires: pkgconfig(Qt6DBus)
+
 Requires: qt6-qtbase-gui
 Requires: kf6-kcoreaddons
 
@@ -51,21 +53,21 @@ developing applications that use %{name}.
 %files
 %doc README.md
 %license LICENSES/*.txt
-%{kf6_datadir}/qlogging-categories6/kauth.*
-%{kf6_libdir}/libKF6Auth.so.*
-%{kf6_libdir}/libKF6AuthCore.so.*
-%{kf6_datadir}/dbus-1/system.d/org.kde.kf6auth.conf
-%{kf6_qtplugindir}/kauth/
-%{kf6_datadir}/kf6/kauth/
-#%{kf6_libexecdir}/kauth/
-%{kf6_datadir}/locale/
+%{_kf6_datadir}/qlogging-categories6/kauth.*
+%{_kf6_libdir}/libKF6Auth.so.*
+%{_kf6_libdir}/libKF6AuthCore.so.*
+%{_kf6_datadir}/dbus-1/system.d/org.kde.kf6auth.conf
+%{_kf6_qtplugindir}/kauth/
+%{_kf6_datadir}/kf6/kauth/
+#%%{_kf6_libexecdir}/kauth/
+%{_kf6_datadir}/locale/
 
 %files devel
-%{kf6_includedir}/KF6/KAuth/
-%{kf6_includedir}/KF6/KAuthCore/
-%{kf6_includedir}/KF6/KAuthWidgets/
-%{kf6_libdir}/libKF6Auth.so
-%{kf6_libdir}/libKF6AuthCore.so
-%{kf6_libdir}/cmake/KF6Auth/
-%{kf6_archdatadir}/mkspecs/modules/qt_KAuth*.pri
+%{_kf6_includedir}/KF6/KAuth/
+%{_kf6_includedir}/KF6/KAuthCore/
+%{_kf6_includedir}/KF6/KAuthWidgets/
+%{_kf6_libdir}/libKF6Auth.so
+%{_kf6_libdir}/libKF6AuthCore.so
+%{_kf6_libdir}/cmake/KF6Auth/
+%{_kf6_archdatadir}/mkspecs/modules/qt_KAuth*.pri
 
