@@ -46,11 +46,12 @@ developing applications that use %{name}.
 %install
 %cmake_install
 
+%find_lang_kf6 kauth6_qt
+
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-
-%files
+%files -f kauth6_qt.lang
 %doc README.md
 %license LICENSES/*.txt
 %{_kf6_datadir}/qlogging-categories6/kauth.*
@@ -60,7 +61,6 @@ developing applications that use %{name}.
 %{_kf6_qtplugindir}/kauth/
 %{_kf6_datadir}/kf6/kauth/
 #%%{_kf6_libexecdir}/kauth/
-%{_kf6_datadir}/locale/
 
 %files devel
 %{_kf6_includedir}/KF6/KAuth/
