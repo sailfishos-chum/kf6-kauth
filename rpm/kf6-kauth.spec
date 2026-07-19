@@ -1,5 +1,4 @@
-%global kf6_version 6.28.0
-%global qt6_version 6.7.0
+%global kf_version 6.28.0
 
 Name: kf6-kauth
 Version: 6.28.0
@@ -11,8 +10,8 @@ URL:     https://invent.kde.org/frameworks/kauth
 
 Source0: %{name}-%{version}.tar.bz2
 
-BuildRequires: kf6-extra-cmake-modules >= %{kf6_version}
-BuildRequires: kf6-kcoreaddons-devel >= %{kf6_version}
+BuildRequires: kf6-extra-cmake-modules >= %{kf_version}
+BuildRequires: kf6-kcoreaddons-devel >= %{kf_version}
 BuildRequires: kf6-rpm-macros
 
 BuildRequires: qt6-qtbase-devel
@@ -29,7 +28,7 @@ KAuth is a framework to let applications perform actions as a privileged user.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires: kf6-kcoreaddons-devel >= %{kf6_version}
+Requires: kf6-kcoreaddons-devel >= %{kf_version}
 %description    devel
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
