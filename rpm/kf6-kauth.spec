@@ -1,7 +1,7 @@
-%global kf_version 6.28.0
+%global kf_version 6.24.0
 
 Name: kf6-kauth
-Version: 6.28.0
+Version: 6.24.0
 Release: 1%{?dist}
 Summary: Execute actions as privileged user
 
